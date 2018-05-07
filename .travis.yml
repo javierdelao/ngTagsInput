@@ -9,13 +9,5 @@ sudo: false
 cache:
   directories:
     - node_modules
-deploy:
-  provider: s3
-  access_key_id: m6k7w3nlYbFVE6MNvllFpQ
-  bucket: ng-tags-input
-  local-dir: build/travis
-  skip_cleanup: true
-  on:
-    repo: javierdelao/ngTagsInput
-    branch: master
+
 
