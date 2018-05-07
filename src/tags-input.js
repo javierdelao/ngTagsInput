@@ -59,23 +59,11 @@ export default function TagsInputDirective($timeout, $document, $window, $q, tag
   function TagList(options, events, onTagAdding, onTagRemoving) {
     let self = {};
 
-    if(options.displayProperty.includes("translation")){
-        let getTagText = tag =>tiUtil.safeToString(tag.translation.text);
-    }else{
-        let getTagText = tag =>tiUtil.safeToString(tag[options.displayProperty]);
-    }
-
-      if(options.displayProperty.includes("translation")){
-          let setTagText = (tag, text) => {
-              tag.translation.text = text;
-          };
-      }else{
-          let setTagText = (tag, text) => {
-              tag[options.displayProperty] = text;
-          };
-      }
-
-
+    console.log(options.displayProperty);
+    let getTagText = tag =>tiUtil.safeToString(tag[options.displayProperty]);
+    let setTagText = (tag, text) => {
+      tag[options.displayProperty] = text;
+    };
 
     let canAddTag = tag => {
       let tagText = getTagText(tag);
